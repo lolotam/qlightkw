@@ -1,0 +1,867 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset",
+    "clear": "Clear",
+    "viewAll": "View All",
+    "seeMore": "See More",
+    "showLess": "Show Less",
+    "noResults": "No results found",
+    "currency": "KWD",
+    "welcome": "Welcome"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "account": "My Account",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "search": "Search products..."
+  },
+  "home": {
+    "hero": {
+      "title": "Illuminate Your World",
+      "subtitle": "Premium lighting solutions for every space",
+      "cta": "Shop Now",
+      "ctaSecondary": "View Projects"
+    },
+    "categories": {
+      "title": "Shop by Category",
+      "subtitle": "Explore our wide range of lighting products"
+    },
+    "newArrivals": {
+      "title": "New Arrivals",
+      "subtitle": "Discover our latest products",
+      "badge": "New"
+    },
+    "bestSellers": {
+      "title": "Best Sellers",
+      "subtitle": "Our most popular products"
+    },
+    "featured": {
+      "title": "Featured Products",
+      "subtitle": "Handpicked for you"
+    },
+    "shopByRoom": {
+      "title": "Shop by Room",
+      "subtitle": "Find the perfect lighting for your space",
+      "livingRoom": "Living Room",
+      "bedroom": "Bedroom",
+      "kitchen": "Kitchen",
+      "bathroom": "Bathroom",
+      "office": "Office",
+      "outdoor": "Outdoor"
+    },
+    "brands": {
+      "title": "Trusted Brands",
+      "subtitle": "We carry only the best"
+    },
+    "projects": {
+      "title": "Our Projects",
+      "subtitle": "See how we've transformed spaces",
+      "viewProject": "View Project"
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Same-day delivery available in Kuwait"
+      },
+      "qualityGuaranteed": {
+        "title": "Quality Guaranteed",
+        "description": "Only authentic products from trusted brands"
+      },
+      "expertSupport": {
+        "title": "Expert Support",
+        "description": "24/7 customer service to help you"
+      },
+      "easyReturns": {
+        "title": "Easy Returns",
+        "description": "30-day hassle-free return policy"
+      }
+    },
+    "testimonials": {
+      "title": "What Our Customers Say",
+      "subtitle": "Real reviews from real customers"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Subscribe to get exclusive deals and updates",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "privacy": "We respect your privacy"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "priceRange": "Price Range",
+      "brands": "Brands",
+      "rating": "Rating",
+      "color": "Color",
+      "features": "Features",
+      "stockStatus": "Stock Status",
+      "inStock": "In Stock",
+      "outOfStock": "Out of Stock",
+      "preOrder": "Pre-Order",
+      "clearAll": "Clear All",
+      "apply": "Apply Filters"
+    },
+    "sort": {
+      "featured": "Featured",
+      "newest": "Newest",
+      "priceLowHigh": "Price: Low to High",
+      "priceHighLow": "Price: High to Low",
+      "rating": "Top Rated",
+      "bestSelling": "Best Selling"
+    },
+    "card": {
+      "addToCart": "Add to Cart",
+      "quickView": "Quick View",
+      "addToWishlist": "Add to Wishlist",
+      "compare": "Compare",
+      "sale": "Sale",
+      "new": "New",
+      "soldOut": "Sold Out",
+      "soldCount": "{{count}} sold"
+    },
+    "detail": {
+      "sku": "SKU",
+      "availability": "Availability",
+      "inStock": "In Stock",
+      "lowStock": "Low Stock",
+      "outOfStock": "Out of Stock",
+      "quantity": "Quantity",
+      "addToCart": "Add to Cart",
+      "buyNow": "Buy Now",
+      "addToWishlist": "Add to Wishlist",
+      "share": "Share",
+      "description": "Description",
+      "specifications": "Specifications",
+      "installation": "Installation Guide",
+      "reviews": "Reviews",
+      "faq": "FAQ",
+      "relatedProducts": "Related Products",
+      "writeReview": "Write a Review"
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": {
+      "title": "Your cart is empty",
+      "subtitle": "Start shopping to add items",
+      "cta": "Start Shopping"
+    },
+    "item": {
+      "remove": "Remove",
+      "moveToWishlist": "Move to Wishlist"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "discount": "Discount",
+      "total": "Total",
+      "coupon": {
+        "title": "Have a coupon?",
+        "placeholder": "Enter code",
+        "apply": "Apply"
+      },
+      "checkout": "Proceed to Checkout"
+    },
+    "continueShopping": "Continue Shopping"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "steps": {
+      "contact": "Contact",
+      "shipping": "Shipping",
+      "delivery": "Delivery",
+      "payment": "Payment"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "shipping": {
+      "title": "Shipping Address",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "address2": "Apartment, suite, etc. (optional)",
+      "city": "City",
+      "state": "Governorate",
+      "postalCode": "Postal Code",
+      "country": "Country",
+      "saveAddress": "Save this address"
+    },
+    "delivery": {
+      "title": "Delivery Method",
+      "standard": {
+        "title": "Standard Delivery",
+        "description": "3-5 business days"
+      },
+      "express": {
+        "title": "Express Delivery",
+        "description": "1-2 business days"
+      },
+      "sameDay": {
+        "title": "Same-Day Delivery",
+        "description": "Delivery by 8 PM today"
+      },
+      "notes": "Delivery Notes"
+    },
+    "payment": {
+      "title": "Payment Method",
+      "knet": "K-Net",
+      "cod": "Cash on Delivery",
+      "wamad": "Wamad Transfer",
+      "card": "Credit/Debit Card"
+    },
+    "placeOrder": "Place Order",
+    "terms": "I agree to the Terms & Conditions and Privacy Policy"
+  },
+  "order": {
+    "confirmation": {
+      "title": "Order Confirmed!",
+      "subtitle": "Thank you for your purchase",
+      "orderNumber": "Order Number",
+      "emailSent": "A confirmation email has been sent to {{email}}",
+      "trackOrder": "Track Order",
+      "continueShopping": "Continue Shopping"
+    },
+    "status": {
+      "pending": "Pending",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded"
+    }
+  },
+  "account": {
+    "title": "My Account",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "addresses": "Addresses",
+    "wishlist": "Wishlist",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "welcome": "Welcome back, {{name}}!"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "register": "Create Account"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join Quality Light today",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "terms": "I agree to the Terms & Conditions",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign In"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email to reset your password",
+      "email": "Email",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to Login"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About Quality Light",
+      "description": "Kuwait's premier destination for premium lighting and electrical solutions. We bring quality and style to every space."
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "customerService": {
+      "title": "Customer Service",
+      "shipping": "Shipping & Delivery",
+      "returns": "Returns & Refunds",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "faq": "FAQ"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Kuwait City, Kuwait",
+      "phone": "+965 XXXX XXXX",
+      "email": "info@qualitylight.kw",
+      "hours": "Sat-Thu: 9AM - 9PM"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Your email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "© {{year}} Quality Light. All rights reserved.",
+    "paymentMethods": "Accepted Payment Methods"
+  },
+  "about": {
+    "hero": {
+      "title": "About Quality Light",
+      "subtitle": "Illuminating spaces since 2010"
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Quality Light was founded with a simple mission: to bring premium lighting solutions to homes and businesses across Kuwait."
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": {
+        "title": "Quality",
+        "description": "We never compromise on quality"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Always at the forefront of lighting technology"
+      },
+      "customer": {
+        "title": "Customer First",
+        "description": "Your satisfaction is our priority"
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "Committed to eco-friendly solutions"
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Meet the people behind Quality Light"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "order": "Order Support",
+        "product": "Product Question",
+        "partnership": "Partnership",
+        "other": "Other"
+      },
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you! We'll get back to you soon."
+    },
+    "info": {
+      "call": {
+        "title": "Call Us",
+        "hours": "Sat-Thu: 9AM - 9PM"
+      },
+      "email": {
+        "title": "Email Us",
+        "response": "We respond within 24 hours"
+      },
+      "visit": {
+        "title": "Visit Us",
+        "directions": "Get Directions"
+      }
+    }
+  },
+  "admin": {
+    "panel": "Admin Panel",
+    "adminRole": "Admin",
+    "signOut": "Sign Out",
+    "collapse": "Collapse",
+    "backToStore": "Back to Store",
+    "main": "Main",
+    "content": "Content",
+    "media": "Media & Inventory",
+    "system": "System",
+    "nav": {
+      "dashboard": "Dashboard",
+      "analytics": "Analytics",
+      "visitors": "Visitors",
+      "products": "Products",
+      "categories": "Categories",
+      "brands": "Brands",
+      "tags": "Tags",
+      "orders": "Orders",
+      "coupons": "Coupons",
+      "users": "Users",
+      "banners": "Banners",
+      "projects": "Projects",
+      "testimonials": "Testimonials",
+      "messages": "Messages",
+      "images": "Image Gallery",
+      "imageValidator": "Image Validator",
+      "imageCacher": "Image Cacher",
+      "inventory": "Inventory Alerts",
+      "logs": "System Logs",
+      "observability": "Observability",
+      "documentation": "Documentation",
+      "settings": "Settings",
+      "blog": "Blog Posts"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Overview of your store performance",
+      "totalRevenue": "Total Revenue",
+      "totalOrders": "Total Orders",
+      "totalProducts": "Total Products",
+      "totalUsers": "Total Users",
+      "recentOrders": "Recent Orders",
+      "topProducts": "Top Products",
+      "salesChart": "Sales Overview"
+    },
+    "dashboardTitle": "Dashboard",
+    "dashboardDescription": "Overview of your store performance",
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "totalProducts": "Total Products",
+    "totalUsers": "Total Users",
+    "recentOrders": "Recent Orders",
+    "recentOrdersDescription": "Latest orders from your store",
+    "topProducts": "Top Products",
+    "salesChart": "Sales Overview",
+    "revenueOverview": "Revenue Overview",
+    "revenueDescription": "Monthly revenue for the current year",
+    "fromLastMonth": "from last month",
+    "viewAll": "View all",
+    "loading": "Loading...",
+    "noOrders": "No orders yet",
+    "noOrdersDesc": "Orders will appear here when customers place them.",
+    "quickActions": "Quick Actions",
+    "addProduct": "Add Product",
+    "addCategory": "Add Category",
+    "addBrand": "Add Brand",
+    "pendingOrders": "Pending Orders",
+    "error": "Error",
+    "products": {
+      "title": "Products",
+      "add": "Add Product",
+      "edit": "Edit Product",
+      "form": {
+        "basicInfo": "Basic Information",
+        "nameEn": "Product Name (English)",
+        "nameAr": "Product Name (Arabic)",
+        "sku": "SKU",
+        "brand": "Brand",
+        "category": "Category",
+        "shortDescEn": "Short Description (English)",
+        "shortDescAr": "Short Description (Arabic)",
+        "descEn": "Description (English)",
+        "descAr": "Description (Arabic)",
+        "images": "Images",
+        "mainImage": "Main Image",
+        "gallery": "Gallery",
+        "pricing": "Pricing",
+        "regularPrice": "Regular Price",
+        "salePrice": "Sale Price",
+        "inventory": "Inventory",
+        "manageStock": "Manage Stock",
+        "stockQty": "Stock Quantity",
+        "lowStockThreshold": "Low Stock Threshold",
+        "variations": "Variations",
+        "addVariation": "Add Variation",
+        "attributes": "Attributes",
+        "seo": "SEO",
+        "metaTitle": "Meta Title",
+        "metaDesc": "Meta Description",
+        "slug": "URL Slug"
+      }
+    },
+    "productsDescription": "Manage your product catalog",
+    "searchProducts": "Search products...",
+    "allProducts": "All Products",
+    "noProducts": "No products yet",
+    "noProductsDesc": "Get started by adding your first product.",
+    "productDeleted": "Product deleted",
+    "productDeletedDesc": "The product has been deleted successfully.",
+    "statusUpdated": "Status updated",
+    "statusLabel": "Status",
+    "deleteProduct": "Delete Product",
+    "deleteProductDesc": "Are you sure you want to delete this product? This action cannot be undone.",
+    "filters": "Filters",
+    "exportCSV": "Export CSV",
+    "exportSuccess": "Export successful",
+    "csvDownloaded": "CSV file downloaded",
+    "product": "Product",
+    "sku": "SKU",
+    "category": "Category",
+    "price": "Price",
+    "stock": "Stock",
+    "featured": "Featured",
+    "new": "New",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "orders": {
+      "title": "Orders",
+      "details": "Order Details",
+      "updateStatus": "Update Status",
+      "addTracking": "Add Tracking Number",
+      "printInvoice": "Print Invoice"
+    },
+    "ordersDescription": "Manage customer orders",
+    "searchOrders": "Search by order number...",
+    "allOrders": "All Orders",
+    "allStatuses": "All Statuses",
+    "order": "Order",
+    "customer": "Customer",
+    "payment": "Payment",
+    "total": "Total",
+    "date": "Date",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "orderUpdated": "Order status updated",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded"
+    },
+    "markAs": {
+      "pending": "Mark as Pending",
+      "confirmed": "Mark as Confirmed",
+      "processing": "Mark as Processing",
+      "shipped": "Mark as Shipped",
+      "delivered": "Mark as Delivered",
+      "cancelled": "Mark as Cancelled",
+      "refunded": "Mark as Refunded"
+    },
+    "categories": "Categories",
+    "categoriesDescription": "Organize your products into categories",
+    "categoryTree": "Category Tree",
+    "noCategories": "No categories yet",
+    "noCategoriesDesc": "Start by creating your first category.",
+    "editCategory": "Edit Category",
+    "categoryFormDesc": "Fill in the category details below.",
+    "nameEn": "Name (English)",
+    "nameAr": "Name (Arabic)",
+    "slug": "Slug",
+    "parentCategory": "Parent Category",
+    "noParent": "No parent (root category)",
+    "descriptionEn": "Description (English)",
+    "descriptionAr": "Description (Arabic)",
+    "active": "Active",
+    "inactive": "Inactive",
+    "cancel": "Cancel",
+    "update": "Update",
+    "create": "Create",
+    "deleteCategory": "Delete Category",
+    "deleteCategoryDesc": "Are you sure? This will also affect any subcategories.",
+    "categoryUpdated": "Category updated",
+    "categoryCreated": "Category created",
+    "categoryDeleted": "Category deleted",
+    "addSubcategory": "Add subcategory",
+    "brands": "Brands",
+    "brandsDescription": "Manage product brands",
+    "allBrands": "All Brands",
+    "noBrands": "No brands yet",
+    "noBrandsDesc": "Start by adding your first brand.",
+    "editBrand": "Edit Brand",
+    "brandFormDesc": "Fill in the brand details below.",
+    "name": "Name",
+    "logoUrl": "Logo URL",
+    "websiteUrl": "Website URL",
+    "website": "Website",
+    "deleteBrand": "Delete Brand",
+    "deleteBrandDesc": "Are you sure you want to delete this brand?",
+    "brandUpdated": "Brand updated",
+    "brandCreated": "Brand created",
+    "brandDeleted": "Brand deleted",
+    "users": "Users",
+    "usersDescription": "Manage user accounts and roles",
+    "searchUsers": "Search by name or email...",
+    "allUsers": "All Users",
+    "noUsers": "No users found",
+    "user": "User",
+    "email": "Email",
+    "phone": "Phone",
+    "role": "Role",
+    "joined": "Joined",
+    "noName": "No name",
+    "admin": "Admin",
+    "userUpdated": "User status updated",
+    "roleUpdated": "User role updated",
+    "deactivate": "Deactivate",
+    "activate": "Activate",
+    "removeAdmin": "Remove Admin",
+    "makeAdmin": "Make Admin",
+    "coupons": {
+      "title": "Coupons",
+      "description": "Manage discount codes and promotions",
+      "add": "Add Coupon",
+      "edit": "Edit Coupon",
+      "create": "Create Coupon",
+      "formDescription": "Set up discount code details",
+      "code": "Code",
+      "discountType": "Discount Type",
+      "percentage": "Percentage",
+      "fixed": "Fixed Amount",
+      "discountValue": "Value",
+      "descriptionEn": "Description (EN)",
+      "descriptionAr": "Description (AR)",
+      "minOrder": "Min Order (KWD)",
+      "maxDiscount": "Max Discount (KWD)",
+      "validFrom": "Valid From",
+      "validUntil": "Valid Until",
+      "maxUses": "Max Uses (leave empty for unlimited)",
+      "isActive": "Active",
+      "discount": "Discount",
+      "usage": "Usage",
+      "validity": "Validity",
+      "search": "Search coupons...",
+      "noCoupons": "No coupons found",
+      "updated": "Coupon updated",
+      "created": "Coupon created",
+      "deleted": "Coupon deleted",
+      "expired": "Expired",
+      "maxedOut": "Maxed Out",
+      "copied": "Code copied to clipboard",
+      "unlimited": "Unlimited",
+      "uses": "uses"
+    },
+    "banners": {
+      "title": "Promo Banners",
+      "description": "Manage homepage promotional banners",
+      "add": "Add Banner",
+      "edit": "Edit Banner",
+      "preview": "Preview",
+      "titleCol": "Title",
+      "status": "Status",
+      "schedule": "Schedule",
+      "empty": "No banners created yet",
+      "titleEn": "Title (English)",
+      "titleAr": "Title (Arabic)",
+      "subtitleEn": "Subtitle (English)",
+      "subtitleAr": "Subtitle (Arabic)",
+      "imageUrl": "Image URL",
+      "linkUrl": "Link URL",
+      "buttonEn": "Button Text (English)",
+      "buttonAr": "Button Text (Arabic)",
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    },
+    "blog": {
+      "title": "Blog Posts",
+      "description": "Manage blog articles and content",
+      "add": "Add Post",
+      "edit": "Edit Post",
+      "search": "Search posts...",
+      "noPosts": "No blog posts found",
+      "generateWithAI": "Generate with AI",
+      "aiTopic": "Blog Topic",
+      "aiTone": "Tone",
+      "tones": {
+        "professional": "Professional",
+        "casual": "Casual",
+        "educational": "Educational"
+      },
+      "generate": "Generate",
+      "content": "Content",
+      "details": "Details",
+      "image": "Image",
+      "titleEn": "Title (English)",
+      "titleAr": "Title (Arabic)",
+      "excerptEn": "Excerpt (English)",
+      "excerptAr": "Excerpt (Arabic)",
+      "contentEn": "Content (English)",
+      "contentAr": "Content (Arabic)",
+      "slug": "URL Slug",
+      "category": "Category",
+      "author": "Author",
+      "featuredImage": "Featured Image",
+      "published": "Published",
+      "draft": "Draft",
+      "scheduled": "Scheduled",
+      "publishNow": "Publish Now",
+      "saveDraft": "Save Draft",
+      "schedulePublish": "Schedule",
+      "preview": "Preview",
+      "status": "Status",
+      "categories": {
+        "tips": "Tips",
+        "guide": "Guide",
+        "inspiration": "Inspiration",
+        "news": "News",
+        "tutorial": "Tutorial"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "general": "General",
+      "payment": "Payment Methods",
+      "shipping": "Shipping",
+      "email": "Email",
+      "seo": "SEO",
+      "aiProvider": "AI Provider",
+      "aiProviderDescription": "Configure AI content generation settings",
+      "ai": {
+        "title": "AI",
+        "description": "AI provider settings",
+        "imageGeneration": "Image Generation",
+        "imageGenerationDesc": "Choose the provider and model for image generation",
+        "chatTextGeneration": "Chat / Text Generation",
+        "chatTextGenerationDesc": "Choose the provider and model for text generation",
+        "provider": "Provider",
+        "model": "Model",
+        "imageModel": "Image Model",
+        "textModel": "Text Model",
+        "googleModel": "Google Model",
+        "openrouterModel": "OpenRouter Model",
+        "searchModels": "Search models...",
+        "noModelsFound": "No models found",
+        "noImageModelsFound": "No image model found.",
+        "noTextModelsFound": "No model found.",
+        "selectModel": "Select a model",
+        "selectImageModel": "Select image model...",
+        "selectTextModel": "Select text model...",
+        "modelsAvailable": "{{count}} models available",
+        "imageModelsAvailable": "{{count}} image models available",
+        "textModelsAvailable": "{{count}} text models available",
+        "apiKeyRequired": "API key required",
+        "googleApiKey": "Google API Key",
+        "openrouterApiKey": "OpenRouter API Key",
+        "secureStorage": "Secure API Key Storage",
+        "secureStorageDesc": "API keys are securely stored in the database and are never exposed in the frontend. Configure them through Supabase Edge Function secrets for maximum security.",
+        "autoGenerate": "Auto-generate descriptions",
+        "autoGenerateDesc": "Automatically generate descriptions when adding products",
+        "googleAI": "Google AI",
+        "googleAIDesc": "Gemini & Imagen",
+        "googleAITextDesc": "Gemini models",
+        "openRouter": "OpenRouter",
+        "openRouterImageDesc": "DALL-E, Flux, SD",
+        "openRouterTextDesc": "300+ models",
+        "refresh": "Refresh"
+      },
+      "paymentMethods": {
+        "title": "Payment Methods",
+        "knet": "K-Net",
+        "cod": "Cash on Delivery",
+        "wamad": "Wamad Transfer",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Manage your portfolio projects",
+      "add": "Add Project",
+      "edit": "Edit Project",
+      "search": "Search projects...",
+      "noProjects": "No projects found",
+      "generateWithAI": "Generate with AI",
+      "aiTopic": "Project Topic",
+      "generate": "Generate",
+      "content": "Content",
+      "details": "Details",
+      "image": "Image",
+      "titleEn": "Title (English)",
+      "titleAr": "Title (Arabic)",
+      "slug": "URL Slug",
+      "descriptionEn": "Description (English)",
+      "descriptionAr": "Description (Arabic)",
+      "location": "Location",
+      "clientName": "Client Name",
+      "completionDate": "Completion Date",
+      "active": "Active",
+      "inactive": "Inactive",
+      "featured": "Featured",
+      "featuredBadge": "Featured",
+      "status": "Status",
+      "titleColumn": "Title",
+      "currentImage": "Current Image",
+      "uploadImage": "Upload Image",
+      "generateImage": "Generate Image with AI",
+      "generating": "Generating..."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "Manage customer testimonials",
+      "add": "Add Testimonial",
+      "edit": "Edit Testimonial",
+      "search": "Search testimonials...",
+      "noTestimonials": "No testimonials found",
+      "generateWithAI": "Generate with AI",
+      "aiTopic": "Customer Type / Scenario",
+      "generate": "Generate",
+      "author": "Author",
+      "content": "Content",
+      "settings": "Settings",
+      "authorImage": "Author Image",
+      "authorNameEn": "Author Name (English)",
+      "authorNameAr": "Author Name (Arabic)",
+      "authorTitleEn": "Title/Profession (English)",
+      "authorTitleAr": "Title/Profession (Arabic)",
+      "contentEn": "Testimonial (English)",
+      "contentAr": "Testimonial (Arabic)",
+      "rating": "Rating",
+      "active": "Active",
+      "inactive": "Inactive",
+      "activeDesc": "Show this testimonial on the website",
+      "featured": "Featured",
+      "featuredBadge": "Featured",
+      "featuredDesc": "Show on the home page",
+      "status": "Status"
+    },
+    "searchPlaceholder": "Search products, orders, users...",
+    "language": "Language"
+  }
+}

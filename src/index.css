@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts - Cairo as primary font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+/* Quality Light E-Commerce Design System
+   Primary: Orange (#F97316)
+   Secondary: Dark Gray/Black
+   Accent: White
+   Supports Light/Dark modes and RTL */
+
+@layer base {
+  :root {
+    /* Primary - Orange from logo */
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 24.6 95% 45%;
+    
+    /* Background & Surface */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    /* Secondary - Dark Gray */
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    
+    /* Muted */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    /* Accent */
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 24.6 95% 53.1%;
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 24.6 95% 53.1%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 24.6 95% 53.1%;
+    
+    /* Chart Colors */
+    --chart-1: 24.6 95% 53.1%;
+    --chart-2: 220.9 39.3% 11%;
+    --chart-3: 142.1 76.2% 36.3%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84.2% 60.2%;
+  }
+
+  .dark {
+    /* Primary - Warm Orange for dark mode */
+    --primary: 35 90% 52%;
+    --primary-foreground: 20 14% 4%;
+    --primary-hover: 35 90% 60%;
+    
+    /* Background & Surface - Warm dark tones */
+    --background: 20 14% 6%;
+    --foreground: 38 25% 90%;
+    
+    --card: 20 12% 10%;
+    --card-foreground: 38 25% 90%;
+    
+    --popover: 20 12% 10%;
+    --popover-foreground: 38 25% 90%;
+    
+    /* Secondary - Warm brown tones */
+    --secondary: 25 10% 15%;
+    --secondary-foreground: 38 25% 90%;
+    
+    /* Muted - Warm muted */
+    --muted: 25 10% 15%;
+    --muted-foreground: 35 15% 60%;
+    
+    /* Accent - Warm accent */
+    --accent: 25 10% 18%;
+    --accent-foreground: 38 25% 90%;
+    
+    /* Destructive */
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 38 25% 90%;
+    
+    /* Success */
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 0%;
+    
+    /* Borders & Inputs - Warm borders */
+    --border: 25 10% 18%;
+    --input: 25 10% 15%;
+    --ring: 35 90% 52%;
+    
+    /* Sidebar - Dark luxury sidebar */
+    --sidebar-background: 20 14% 6%;
+    --sidebar-foreground: 38 25% 90%;
+    --sidebar-primary: 35 90% 52%;
+    --sidebar-primary-foreground: 20 14% 4%;
+    --sidebar-accent: 25 10% 14%;
+    --sidebar-accent-foreground: 38 25% 90%;
+    --sidebar-border: 25 10% 16%;
+    --sidebar-ring: 35 90% 52%;
+    
+    /* Chart Colors */
+    --chart-1: 35 90% 52%;
+    --chart-2: 38 25% 90%;
+    --chart-3: 142.1 70.6% 45.3%;
+    --chart-4: 45 93% 47%;
+    --chart-5: 0 62.8% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* RTL Support - Arabic font */
+  [dir="rtl"] body,
+  html[lang="ar"] body {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-400;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+
+  /* RTL flip utility for icons */
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* RTL-aware margin utilities */
+  [dir="rtl"] .ms-auto {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  [dir="ltr"] .ms-auto {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* RTL-aware text alignment for tables */
+  [dir="rtl"] .text-start {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .text-end {
+    text-align: left;
+  }
+}
+
+/* Glow Button Styles */
+@layer components {
+  .btn-glow {
+    --glow-color: hsl(var(--primary));
+    --glow-spread-color: hsl(var(--primary) / 0.5);
+    --enhanced-glow-color: hsl(var(--primary) / 0.8);
+    --btn-color: hsl(var(--primary) / 0.15);
+    
+    border: 2px solid var(--glow-color) !important;
+    color: var(--glow-color) !important;
+    background-color: var(--btn-color) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 
+      0 0 0.5em 0.1em var(--glow-color),
+      0 0 2em 0.5em var(--glow-spread-color),
+      inset 0 0 0.5em 0.1em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(1.5em);
+    opacity: 0.5;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.5);
+    border-radius: inherit;
+  }
+
+  .btn-glow:hover:not(:disabled) {
+    color: hsl(var(--primary-foreground)) !important;
+    background-color: var(--glow-color) !important;
+    box-shadow: 
+      0 0 0.75em 0.2em var(--glow-color),
+      0 0 3em 1em var(--glow-spread-color),
+      inset 0 0 0.5em 0.2em var(--glow-color);
+  }
+
+  .btn-glow:active:not(:disabled) {
+    box-shadow: 
+      0 0 0.4em 0.15em var(--glow-color),
+      0 0 1.5em 0.75em var(--glow-spread-color),
+      inset 0 0 0.3em 0.15em var(--glow-color);
+  }
+
+  /* Destructive glow variant */
+  .btn-glow-destructive {
+    --glow-color: hsl(var(--destructive));
+    --glow-spread-color: hsl(var(--destructive) / 0.5);
+    --btn-color: hsl(var(--destructive) / 0.15);
+  }
+
+  /* Secondary/Outline glow variant - subtle */
+  .btn-glow-subtle {
+    --glow-color: hsl(var(--muted-foreground));
+    --glow-spread-color: hsl(var(--muted-foreground) / 0.3);
+    --btn-color: transparent;
+    box-shadow: 
+      0 0 0.3em 0.05em var(--glow-color),
+      inset 0 0 0.3em 0.05em var(--glow-color);
+  }
+
+  .btn-glow-subtle:hover:not(:disabled) {
+    --glow-color: hsl(var(--primary));
+    --glow-spread-color: hsl(var(--primary) / 0.4);
+    color: hsl(var(--primary)) !important;
+    background-color: hsl(var(--primary) / 0.1) !important;
+  }
+
+  /* ============================================
+     Blog Content Styles
+     Styles for AI-generated blog content
+     ============================================ */
+
+  /* Blog Introduction */
+  .blog-intro {
+    @apply mb-8 p-6 rounded-lg bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20;
+  }
+
+  .blog-intro .lead {
+    @apply text-lg leading-relaxed text-foreground;
+  }
+
+  /* Blog Sections */
+  .blog-section {
+    @apply mb-8;
+  }
+
+  .blog-section h2 {
+    @apply text-2xl font-bold mb-4 text-foreground flex items-center gap-2;
+  }
+
+  .blog-section h3 {
+    @apply text-xl font-semibold mb-3 mt-6 text-foreground;
+  }
+
+  /* Feature Lists */
+  .feature-list {
+    @apply space-y-3 my-4 list-none pl-0;
+  }
+
+  .feature-list li {
+    @apply flex items-start gap-2 p-2 rounded-lg bg-muted/50 border border-border/50;
+  }
+
+  /* Steps Lists */
+  .steps-list {
+    @apply space-y-3 my-4 pl-0;
+  }
+
+  .steps-list li {
+    @apply flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-border/30;
+    counter-increment: step;
+  }
+
+  .steps-list li::before {
+    @apply flex-shrink-0 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold;
+    content: counter(step);
+  }
+
+  /* Expert Tip Box */
+  .expert-tip {
+    @apply my-6 p-5 rounded-lg bg-gradient-to-r from-amber-500/10 to-orange-500/10 border-l-4 border-amber-500 italic;
+  }
+
+  /* Warning Box */
+  .warning-box {
+    @apply my-6 p-5 rounded-lg bg-red-500/10 border-l-4 border-red-500;
+  }
+
+  /* Comparison Table */
+  .comparison-table {
+    @apply my-6 overflow-x-auto;
+  }
+
+  .comparison-table table {
+    @apply w-full border-collapse rounded-lg overflow-hidden;
+  }
+
+  .comparison-table th {
+    @apply bg-muted p-3 text-left font-semibold border-b border-border;
+  }
+
+  .comparison-table td {
+    @apply p-3 border-b border-border/50;
+  }
+
+  .comparison-table tr:hover {
+    @apply bg-muted/30;
+  }
+
+  /* Blog Conclusion */
+  .blog-conclusion {
+    @apply mt-10 pt-8 border-t border-border;
+  }
+
+  /* CTA Box */
+  .cta-box {
+    @apply mt-6 p-6 rounded-lg bg-gradient-to-r from-primary/10 to-primary/20 border border-primary/30 text-center;
+  }
+
+  .cta-box p {
+    @apply text-lg mb-0;
+  }
+}

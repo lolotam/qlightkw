@@ -1,0 +1,25 @@
+project_id = "yubebbfsmlopmnluajgf"
+
+[functions.send-admin-email]
+verify_jwt = false
+
+[functions.send-auth-email]
+verify_jwt = false
+
+[functions.generate-ai-content]
+verify_jwt = false
+
+[functions.ai-assistant]
+verify_jwt = false
+
+[functions.generate-blog-content]
+verify_jwt = false
+
+[functions.publish-scheduled-posts]
+verify_jwt = false
+
+[functions.send-order-email]
+verify_jwt = false
+
+[functions.minio-storage]
+verify_jwt = false

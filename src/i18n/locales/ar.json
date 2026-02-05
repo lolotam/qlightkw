@@ -1,0 +1,867 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ ما",
+    "retry": "حاول مرة أخرى",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "all": "الكل",
+    "none": "لا شيء",
+    "yes": "نعم",
+    "no": "لا",
+    "ok": "موافق",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "reset": "إعادة تعيين",
+    "clear": "مسح",
+    "viewAll": "عرض الكل",
+    "seeMore": "عرض المزيد",
+    "showLess": "عرض أقل",
+    "noResults": "لم يتم العثور على نتائج",
+    "currency": "د.ك",
+    "welcome": "مرحباً"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "projects": "المشاريع",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "cart": "سلة التسوق",
+    "wishlist": "المفضلة",
+    "account": "حسابي",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "search": "ابحث عن منتجات..."
+  },
+  "home": {
+    "hero": {
+      "title": "أضئ عالمك",
+      "subtitle": "حلول إضاءة فاخرة لكل مساحة",
+      "cta": "تسوق الآن",
+      "ctaSecondary": "عرض المشاريع"
+    },
+    "categories": {
+      "title": "تسوق حسب الفئة",
+      "subtitle": "استكشف مجموعتنا الواسعة من منتجات الإضاءة"
+    },
+    "newArrivals": {
+      "title": "وصل حديثاً",
+      "subtitle": "اكتشف أحدث منتجاتنا",
+      "badge": "جديد"
+    },
+    "bestSellers": {
+      "title": "الأكثر مبيعاً",
+      "subtitle": "منتجاتنا الأكثر شعبية"
+    },
+    "featured": {
+      "title": "منتجات مميزة",
+      "subtitle": "مختارة خصيصاً لك"
+    },
+    "shopByRoom": {
+      "title": "تسوق حسب الغرفة",
+      "subtitle": "اعثر على الإضاءة المثالية لمساحتك",
+      "livingRoom": "غرفة المعيشة",
+      "bedroom": "غرفة النوم",
+      "kitchen": "المطبخ",
+      "bathroom": "الحمام",
+      "office": "المكتب",
+      "outdoor": "خارجي"
+    },
+    "brands": {
+      "title": "علامات تجارية موثوقة",
+      "subtitle": "نحمل فقط الأفضل"
+    },
+    "projects": {
+      "title": "مشاريعنا",
+      "subtitle": "شاهد كيف حولنا المساحات",
+      "viewProject": "عرض المشروع"
+    },
+    "whyChooseUs": {
+      "title": "لماذا تختارنا",
+      "fastDelivery": {
+        "title": "توصيل سريع",
+        "description": "توصيل في نفس اليوم متاح في الكويت"
+      },
+      "qualityGuaranteed": {
+        "title": "جودة مضمونة",
+        "description": "منتجات أصلية فقط من علامات تجارية موثوقة"
+      },
+      "expertSupport": {
+        "title": "دعم متخصص",
+        "description": "خدمة عملاء على مدار الساعة"
+      },
+      "easyReturns": {
+        "title": "إرجاع سهل",
+        "description": "سياسة إرجاع لمدة 30 يوم"
+      }
+    },
+    "testimonials": {
+      "title": "آراء عملائنا",
+      "subtitle": "تقييمات حقيقية من عملاء حقيقيين"
+    },
+    "newsletter": {
+      "title": "ابق على اطلاع",
+      "subtitle": "اشترك للحصول على عروض وتحديثات حصرية",
+      "placeholder": "أدخل بريدك الإلكتروني",
+      "button": "اشترك",
+      "success": "شكراً لاشتراكك!",
+      "privacy": "نحترم خصوصيتك"
+    },
+    "faq": {
+      "title": "الأسئلة الشائعة",
+      "subtitle": "إجابات على الأسئلة المتكررة"
+    }
+  },
+  "products": {
+    "title": "المنتجات",
+    "filters": {
+      "title": "التصفية",
+      "categories": "الفئات",
+      "priceRange": "نطاق السعر",
+      "brands": "العلامات التجارية",
+      "rating": "التقييم",
+      "color": "اللون",
+      "features": "الميزات",
+      "stockStatus": "حالة المخزون",
+      "inStock": "متوفر",
+      "outOfStock": "غير متوفر",
+      "preOrder": "طلب مسبق",
+      "clearAll": "مسح الكل",
+      "apply": "تطبيق"
+    },
+    "sort": {
+      "featured": "مميز",
+      "newest": "الأحدث",
+      "priceLowHigh": "السعر: من الأقل للأعلى",
+      "priceHighLow": "السعر: من الأعلى للأقل",
+      "rating": "الأعلى تقييماً",
+      "bestSelling": "الأكثر مبيعاً"
+    },
+    "card": {
+      "addToCart": "أضف للسلة",
+      "quickView": "عرض سريع",
+      "addToWishlist": "أضف للمفضلة",
+      "compare": "مقارنة",
+      "sale": "خصم",
+      "new": "جديد",
+      "soldOut": "نفذت الكمية",
+      "soldCount": "{{count}} مبيع"
+    },
+    "detail": {
+      "sku": "رمز المنتج",
+      "availability": "التوفر",
+      "inStock": "متوفر",
+      "lowStock": "كمية محدودة",
+      "outOfStock": "غير متوفر",
+      "quantity": "الكمية",
+      "addToCart": "أضف للسلة",
+      "buyNow": "اشتر الآن",
+      "addToWishlist": "أضف للمفضلة",
+      "share": "مشاركة",
+      "description": "الوصف",
+      "specifications": "المواصفات",
+      "installation": "دليل التركيب",
+      "reviews": "التقييمات",
+      "faq": "الأسئلة الشائعة",
+      "relatedProducts": "منتجات ذات صلة",
+      "writeReview": "اكتب تقييم"
+    }
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": {
+      "title": "سلتك فارغة",
+      "subtitle": "ابدأ التسوق لإضافة منتجات",
+      "cta": "ابدأ التسوق"
+    },
+    "item": {
+      "remove": "إزالة",
+      "moveToWishlist": "نقل للمفضلة"
+    },
+    "summary": {
+      "title": "ملخص الطلب",
+      "subtotal": "المجموع الفرعي",
+      "shipping": "الشحن",
+      "tax": "الضريبة",
+      "discount": "الخصم",
+      "total": "الإجمالي",
+      "coupon": {
+        "title": "لديك كوبون؟",
+        "placeholder": "أدخل الكود",
+        "apply": "تطبيق"
+      },
+      "checkout": "متابعة الدفع"
+    },
+    "continueShopping": "متابعة التسوق"
+  },
+  "checkout": {
+    "title": "إتمام الطلب",
+    "steps": {
+      "contact": "معلومات الاتصال",
+      "shipping": "عنوان الشحن",
+      "delivery": "طريقة التوصيل",
+      "payment": "الدفع"
+    },
+    "contact": {
+      "title": "معلومات الاتصال",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف"
+    },
+    "shipping": {
+      "title": "عنوان الشحن",
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "address": "العنوان",
+      "address2": "شقة، جناح، إلخ (اختياري)",
+      "city": "المدينة",
+      "state": "المحافظة",
+      "postalCode": "الرمز البريدي",
+      "country": "الدولة",
+      "saveAddress": "حفظ هذا العنوان"
+    },
+    "delivery": {
+      "title": "طريقة التوصيل",
+      "standard": {
+        "title": "توصيل عادي",
+        "description": "3-5 أيام عمل"
+      },
+      "express": {
+        "title": "توصيل سريع",
+        "description": "1-2 أيام عمل"
+      },
+      "sameDay": {
+        "title": "توصيل في نفس اليوم",
+        "description": "التوصيل بحلول 8 مساءً"
+      },
+      "notes": "ملاحظات التوصيل"
+    },
+    "payment": {
+      "title": "طريقة الدفع",
+      "knet": "كي-نت",
+      "cod": "الدفع عند الاستلام",
+      "wamad": "تحويل وماد",
+      "card": "بطاقة ائتمان/خصم"
+    },
+    "placeOrder": "إتمام الطلب",
+    "terms": "أوافق على الشروط والأحكام وسياسة الخصوصية"
+  },
+  "order": {
+    "confirmation": {
+      "title": "تم تأكيد الطلب!",
+      "subtitle": "شكراً لشرائك",
+      "orderNumber": "رقم الطلب",
+      "emailSent": "تم إرسال بريد تأكيد إلى {{email}}",
+      "trackOrder": "تتبع الطلب",
+      "continueShopping": "متابعة التسوق"
+    },
+    "status": {
+      "pending": "قيد الانتظار",
+      "processing": "قيد المعالجة",
+      "shipped": "تم الشحن",
+      "delivered": "تم التوصيل",
+      "cancelled": "ملغى",
+      "refunded": "مسترد"
+    }
+  },
+  "account": {
+    "title": "حسابي",
+    "dashboard": "لوحة التحكم",
+    "orders": "الطلبات",
+    "addresses": "العناوين",
+    "wishlist": "المفضلة",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "welcome": "مرحباً بعودتك، {{name}}!"
+  },
+  "auth": {
+    "login": {
+      "title": "مرحباً بعودتك",
+      "subtitle": "سجل دخولك لحسابك",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "noAccount": "ليس لديك حساب؟",
+      "register": "إنشاء حساب"
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "subtitle": "انضم لـ Quality Light اليوم",
+      "fullName": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "terms": "أوافق على الشروط والأحكام",
+      "submit": "إنشاء حساب",
+      "hasAccount": "لديك حساب؟",
+      "login": "تسجيل الدخول"
+    },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "subtitle": "أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور",
+      "email": "البريد الإلكتروني",
+      "submit": "إرسال رابط إعادة التعيين",
+      "backToLogin": "العودة لتسجيل الدخول"
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "عن Quality Light",
+      "description": "الوجهة الأولى في الكويت لحلول الإضاءة والكهرباء الفاخرة. نجلب الجودة والأناقة لكل مساحة."
+    },
+    "quickLinks": {
+      "title": "روابط سريعة"
+    },
+    "customerService": {
+      "title": "خدمة العملاء",
+      "shipping": "الشحن والتوصيل",
+      "returns": "الإرجاع والاسترداد",
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية",
+      "faq": "الأسئلة الشائعة"
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "address": "مدينة الكويت، الكويت",
+      "phone": "+965 XXXX XXXX",
+      "email": "info@qualitylight.kw",
+      "hours": "السبت-الخميس: 9ص - 9م"
+    },
+    "newsletter": {
+      "title": "النشرة الإخبارية",
+      "placeholder": "بريدك الإلكتروني",
+      "subscribe": "اشترك"
+    },
+    "copyright": "© {{year}} Quality Light. جميع الحقوق محفوظة.",
+    "paymentMethods": "طرق الدفع المقبولة"
+  },
+  "about": {
+    "hero": {
+      "title": "عن Quality Light",
+      "subtitle": "نضيء المساحات منذ 2010"
+    },
+    "story": {
+      "title": "قصتنا",
+      "content": "تأسست Quality Light بمهمة بسيطة: تقديم حلول إضاءة فاخرة للمنازل والشركات في جميع أنحاء الكويت."
+    },
+    "values": {
+      "title": "قيمنا",
+      "quality": {
+        "title": "الجودة",
+        "description": "لا نتنازل أبداً عن الجودة"
+      },
+      "innovation": {
+        "title": "الابتكار",
+        "description": "دائماً في طليعة تقنيات الإضاءة"
+      },
+      "customer": {
+        "title": "العميل أولاً",
+        "description": "رضاك أولويتنا"
+      },
+      "sustainability": {
+        "title": "الاستدامة",
+        "description": "ملتزمون بالحلول الصديقة للبيئة"
+      }
+    },
+    "team": {
+      "title": "فريقنا",
+      "subtitle": "تعرف على الأشخاص وراء Quality Light"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "تواصل معنا",
+      "subtitle": "نحن هنا للمساعدة"
+    },
+    "form": {
+      "title": "أرسل لنا رسالة",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "subject": "الموضوع",
+      "subjects": {
+        "general": "استفسار عام",
+        "order": "دعم الطلبات",
+        "product": "سؤال عن منتج",
+        "partnership": "شراكة",
+        "other": "أخرى"
+      },
+      "message": "الرسالة",
+      "submit": "إرسال الرسالة",
+      "success": "شكراً! سنرد عليك قريباً."
+    },
+    "info": {
+      "call": {
+        "title": "اتصل بنا",
+        "hours": "السبت-الخميس: 9ص - 9م"
+      },
+      "email": {
+        "title": "راسلنا",
+        "response": "نرد خلال 24 ساعة"
+      },
+      "visit": {
+        "title": "زرنا",
+        "directions": "احصل على الاتجاهات"
+      }
+    }
+  },
+  "admin": {
+    "panel": "لوحة الإدارة",
+    "adminRole": "مدير",
+    "signOut": "تسجيل الخروج",
+    "collapse": "طي القائمة",
+    "backToStore": "العودة للمتجر",
+    "main": "الرئيسية",
+    "content": "المحتوى",
+    "media": "الوسائط والمخزون",
+    "system": "النظام",
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "analytics": "التحليلات",
+      "visitors": "الزوار",
+      "products": "المنتجات",
+      "categories": "الفئات",
+      "brands": "العلامات التجارية",
+      "tags": "الوسوم",
+      "orders": "الطلبات",
+      "coupons": "الكوبونات",
+      "users": "المستخدمين",
+      "banners": "البانرات",
+      "projects": "المشاريع",
+      "testimonials": "آراء العملاء",
+      "messages": "الرسائل",
+      "images": "معرض الصور",
+      "imageValidator": "فحص الصور",
+      "imageCacher": "تخزين الصور",
+      "inventory": "تنبيهات المخزون",
+      "logs": "سجلات النظام",
+      "observability": "المراقبة",
+      "documentation": "التوثيق",
+      "settings": "الإعدادات",
+      "blog": "المقالات"
+    },
+    "dashboard": {
+      "title": "لوحة التحكم",
+      "description": "نظرة عامة على أداء متجرك",
+      "totalRevenue": "إجمالي الإيرادات",
+      "totalOrders": "إجمالي الطلبات",
+      "totalProducts": "إجمالي المنتجات",
+      "totalUsers": "إجمالي المستخدمين",
+      "recentOrders": "الطلبات الأخيرة",
+      "topProducts": "أفضل المنتجات",
+      "salesChart": "نظرة عامة على المبيعات"
+    },
+    "dashboardTitle": "لوحة التحكم",
+    "dashboardDescription": "نظرة عامة على أداء متجرك",
+    "totalRevenue": "إجمالي الإيرادات",
+    "totalOrders": "إجمالي الطلبات",
+    "totalProducts": "إجمالي المنتجات",
+    "totalUsers": "إجمالي المستخدمين",
+    "recentOrders": "الطلبات الأخيرة",
+    "recentOrdersDescription": "أحدث الطلبات من متجرك",
+    "topProducts": "أفضل المنتجات",
+    "salesChart": "نظرة عامة على المبيعات",
+    "revenueOverview": "نظرة عامة على الإيرادات",
+    "revenueDescription": "الإيرادات الشهرية للسنة الحالية",
+    "fromLastMonth": "من الشهر الماضي",
+    "viewAll": "عرض الكل",
+    "loading": "جاري التحميل...",
+    "noOrders": "لا توجد طلبات بعد",
+    "noOrdersDesc": "ستظهر الطلبات هنا عندما يقوم العملاء بالشراء.",
+    "quickActions": "إجراءات سريعة",
+    "addProduct": "إضافة منتج",
+    "addCategory": "إضافة فئة",
+    "addBrand": "إضافة علامة تجارية",
+    "pendingOrders": "الطلبات المعلقة",
+    "error": "خطأ",
+    "products": {
+      "title": "المنتجات",
+      "add": "إضافة منتج",
+      "edit": "تعديل المنتج",
+      "form": {
+        "basicInfo": "المعلومات الأساسية",
+        "nameEn": "اسم المنتج (إنجليزي)",
+        "nameAr": "اسم المنتج (عربي)",
+        "sku": "رمز المنتج",
+        "brand": "العلامة التجارية",
+        "category": "الفئة",
+        "shortDescEn": "وصف مختصر (إنجليزي)",
+        "shortDescAr": "وصف مختصر (عربي)",
+        "descEn": "الوصف (إنجليزي)",
+        "descAr": "الوصف (عربي)",
+        "images": "الصور",
+        "mainImage": "الصورة الرئيسية",
+        "gallery": "المعرض",
+        "pricing": "التسعير",
+        "regularPrice": "السعر العادي",
+        "salePrice": "سعر الخصم",
+        "inventory": "المخزون",
+        "manageStock": "إدارة المخزون",
+        "stockQty": "كمية المخزون",
+        "lowStockThreshold": "حد المخزون المنخفض",
+        "variations": "التنويعات",
+        "addVariation": "إضافة تنويع",
+        "attributes": "الخصائص",
+        "seo": "تحسين محركات البحث",
+        "metaTitle": "عنوان الميتا",
+        "metaDesc": "وصف الميتا",
+        "slug": "الرابط"
+      }
+    },
+    "productsDescription": "إدارة كتالوج المنتجات",
+    "searchProducts": "البحث في المنتجات...",
+    "allProducts": "جميع المنتجات",
+    "noProducts": "لا توجد منتجات بعد",
+    "noProductsDesc": "ابدأ بإضافة أول منتج.",
+    "productDeleted": "تم حذف المنتج",
+    "productDeletedDesc": "تم حذف المنتج بنجاح.",
+    "statusUpdated": "تم تحديث الحالة",
+    "statusLabel": "الحالة",
+    "deleteProduct": "حذف المنتج",
+    "deleteProductDesc": "هل أنت متأكد من حذف هذا المنتج؟ لا يمكن التراجع عن هذا الإجراء.",
+    "filters": "التصفية",
+    "exportCSV": "تصدير CSV",
+    "exportSuccess": "تم التصدير بنجاح",
+    "csvDownloaded": "تم تحميل ملف CSV",
+    "product": "المنتج",
+    "sku": "رمز المنتج",
+    "category": "الفئة",
+    "price": "السعر",
+    "stock": "المخزون",
+    "featured": "مميز",
+    "new": "جديد",
+    "view": "عرض",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "orders": {
+      "title": "الطلبات",
+      "details": "تفاصيل الطلب",
+      "updateStatus": "تحديث الحالة",
+      "addTracking": "إضافة رقم التتبع",
+      "printInvoice": "طباعة الفاتورة"
+    },
+    "ordersDescription": "إدارة طلبات العملاء",
+    "searchOrders": "البحث برقم الطلب...",
+    "allOrders": "جميع الطلبات",
+    "allStatuses": "جميع الحالات",
+    "order": "الطلب",
+    "customer": "العميل",
+    "payment": "الدفع",
+    "total": "الإجمالي",
+    "date": "التاريخ",
+    "actions": "الإجراءات",
+    "viewDetails": "عرض التفاصيل",
+    "orderUpdated": "تم تحديث حالة الطلب",
+    "status": {
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "processing": "قيد المعالجة",
+      "shipped": "تم الشحن",
+      "delivered": "تم التوصيل",
+      "cancelled": "ملغي",
+      "refunded": "مسترد"
+    },
+    "markAs": {
+      "pending": "تعيين كمعلق",
+      "confirmed": "تعيين كمؤكد",
+      "processing": "تعيين كقيد المعالجة",
+      "shipped": "تعيين كمشحون",
+      "delivered": "تعيين كموصل",
+      "cancelled": "تعيين كملغي",
+      "refunded": "تعيين كمسترد"
+    },
+    "categories": "الفئات",
+    "categoriesDescription": "تنظيم المنتجات في فئات",
+    "categoryTree": "شجرة الفئات",
+    "noCategories": "لا توجد فئات بعد",
+    "noCategoriesDesc": "ابدأ بإنشاء أول فئة.",
+    "editCategory": "تعديل الفئة",
+    "categoryFormDesc": "أدخل تفاصيل الفئة أدناه.",
+    "nameEn": "الاسم (إنجليزي)",
+    "nameAr": "الاسم (عربي)",
+    "slug": "الرابط",
+    "parentCategory": "الفئة الأم",
+    "noParent": "بدون فئة أم (فئة رئيسية)",
+    "descriptionEn": "الوصف (إنجليزي)",
+    "descriptionAr": "الوصف (عربي)",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "cancel": "إلغاء",
+    "update": "تحديث",
+    "create": "إنشاء",
+    "deleteCategory": "حذف الفئة",
+    "deleteCategoryDesc": "هل أنت متأكد؟ سيؤثر هذا على الفئات الفرعية أيضاً.",
+    "categoryUpdated": "تم تحديث الفئة",
+    "categoryCreated": "تم إنشاء الفئة",
+    "categoryDeleted": "تم حذف الفئة",
+    "addSubcategory": "إضافة فئة فرعية",
+    "brands": "العلامات التجارية",
+    "brandsDescription": "إدارة العلامات التجارية للمنتجات",
+    "allBrands": "جميع العلامات التجارية",
+    "noBrands": "لا توجد علامات تجارية بعد",
+    "noBrandsDesc": "ابدأ بإضافة أول علامة تجارية.",
+    "editBrand": "تعديل العلامة التجارية",
+    "brandFormDesc": "أدخل تفاصيل العلامة التجارية أدناه.",
+    "name": "الاسم",
+    "logoUrl": "رابط الشعار",
+    "websiteUrl": "رابط الموقع",
+    "website": "الموقع",
+    "deleteBrand": "حذف العلامة التجارية",
+    "deleteBrandDesc": "هل أنت متأكد من حذف هذه العلامة التجارية؟",
+    "brandUpdated": "تم تحديث العلامة التجارية",
+    "brandCreated": "تم إنشاء العلامة التجارية",
+    "brandDeleted": "تم حذف العلامة التجارية",
+    "users": "المستخدمين",
+    "usersDescription": "إدارة حسابات المستخدمين والصلاحيات",
+    "searchUsers": "البحث بالاسم أو البريد...",
+    "allUsers": "جميع المستخدمين",
+    "noUsers": "لم يتم العثور على مستخدمين",
+    "user": "المستخدم",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "role": "الدور",
+    "joined": "تاريخ الانضمام",
+    "noName": "بدون اسم",
+    "admin": "مدير",
+    "userUpdated": "تم تحديث حالة المستخدم",
+    "roleUpdated": "تم تحديث دور المستخدم",
+    "deactivate": "إلغاء التفعيل",
+    "activate": "تفعيل",
+    "removeAdmin": "إزالة صلاحية المدير",
+    "makeAdmin": "جعله مدير",
+    "coupons": {
+      "title": "الكوبونات",
+      "description": "إدارة أكواد الخصم والعروض",
+      "add": "إضافة كوبون",
+      "edit": "تعديل الكوبون",
+      "create": "إنشاء كوبون",
+      "formDescription": "إعداد تفاصيل كود الخصم",
+      "code": "الكود",
+      "discountType": "نوع الخصم",
+      "percentage": "نسبة مئوية",
+      "fixed": "مبلغ ثابت",
+      "discountValue": "القيمة",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "descriptionAr": "الوصف (عربي)",
+      "minOrder": "الحد الأدنى للطلب (د.ك)",
+      "maxDiscount": "الحد الأقصى للخصم (د.ك)",
+      "validFrom": "صالح من",
+      "validUntil": "صالح حتى",
+      "maxUses": "الحد الأقصى للاستخدام (اتركه فارغاً للاستخدام غير المحدود)",
+      "isActive": "نشط",
+      "discount": "الخصم",
+      "usage": "الاستخدام",
+      "validity": "الصلاحية",
+      "search": "البحث في الكوبونات...",
+      "noCoupons": "لم يتم العثور على كوبونات",
+      "updated": "تم تحديث الكوبون",
+      "created": "تم إنشاء الكوبون",
+      "deleted": "تم حذف الكوبون",
+      "expired": "منتهي",
+      "maxedOut": "استُنفد",
+      "copied": "تم نسخ الكود",
+      "unlimited": "غير محدود",
+      "uses": "استخدام"
+    },
+    "banners": {
+      "title": "البانرات الترويجية",
+      "description": "إدارة بانرات الصفحة الرئيسية",
+      "add": "إضافة بانر",
+      "edit": "تعديل البانر",
+      "preview": "معاينة",
+      "titleCol": "العنوان",
+      "status": "الحالة",
+      "schedule": "الجدول",
+      "empty": "لم يتم إنشاء بانرات بعد",
+      "titleEn": "العنوان (إنجليزي)",
+      "titleAr": "العنوان (عربي)",
+      "subtitleEn": "العنوان الفرعي (إنجليزي)",
+      "subtitleAr": "العنوان الفرعي (عربي)",
+      "imageUrl": "رابط الصورة",
+      "linkUrl": "رابط الوجهة",
+      "buttonEn": "نص الزر (إنجليزي)",
+      "buttonAr": "نص الزر (عربي)",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء"
+    },
+    "blog": {
+      "title": "المقالات",
+      "description": "إدارة مقالات ومحتوى المدونة",
+      "add": "إضافة مقال",
+      "edit": "تعديل المقال",
+      "search": "البحث في المقالات...",
+      "noPosts": "لم يتم العثور على مقالات",
+      "generateWithAI": "إنشاء بالذكاء الاصطناعي",
+      "aiTopic": "موضوع المقال",
+      "aiTone": "الأسلوب",
+      "tones": {
+        "professional": "احترافي",
+        "casual": "غير رسمي",
+        "educational": "تعليمي"
+      },
+      "generate": "إنشاء",
+      "content": "المحتوى",
+      "details": "التفاصيل",
+      "image": "الصورة",
+      "titleEn": "العنوان (إنجليزي)",
+      "titleAr": "العنوان (عربي)",
+      "excerptEn": "المقتطف (إنجليزي)",
+      "excerptAr": "المقتطف (عربي)",
+      "contentEn": "المحتوى (إنجليزي)",
+      "contentAr": "المحتوى (عربي)",
+      "slug": "الرابط",
+      "category": "الفئة",
+      "author": "الكاتب",
+      "featuredImage": "الصورة الرئيسية",
+      "published": "منشور",
+      "draft": "مسودة",
+      "scheduled": "مجدول",
+      "publishNow": "نشر الآن",
+      "saveDraft": "حفظ كمسودة",
+      "schedulePublish": "جدولة",
+      "preview": "معاينة",
+      "status": "الحالة",
+      "categories": {
+        "tips": "نصائح",
+        "guide": "دليل",
+        "inspiration": "إلهام",
+        "news": "أخبار",
+        "tutorial": "تعليمي"
+      }
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "general": "عام",
+      "payment": "طرق الدفع",
+      "shipping": "الشحن",
+      "email": "البريد الإلكتروني",
+      "seo": "تحسين محركات البحث",
+      "aiProvider": "مزود الذكاء الاصطناعي",
+      "aiProviderDescription": "تكوين إعدادات إنشاء المحتوى بالذكاء الاصطناعي",
+      "ai": {
+        "title": "الذكاء الاصطناعي",
+        "description": "إعدادات مزود الذكاء الاصطناعي",
+        "imageGeneration": "إنشاء الصور",
+        "imageGenerationDesc": "اختر المزود والنموذج لإنشاء الصور",
+        "chatTextGeneration": "إنشاء النصوص والمحادثة",
+        "chatTextGenerationDesc": "اختر المزود والنموذج لإنشاء النصوص",
+        "provider": "المزود",
+        "model": "النموذج",
+        "imageModel": "نموذج الصور",
+        "textModel": "نموذج النص",
+        "googleModel": "نموذج Google",
+        "openrouterModel": "نموذج OpenRouter",
+        "searchModels": "البحث عن النماذج...",
+        "noModelsFound": "لم يتم العثور على نماذج",
+        "noImageModelsFound": "لم يتم العثور على نموذج صور.",
+        "noTextModelsFound": "لم يتم العثور على نموذج.",
+        "selectModel": "اختر نموذج",
+        "selectImageModel": "اختر نموذج الصور...",
+        "selectTextModel": "اختر نموذج النص...",
+        "modelsAvailable": "{{count}} نموذج متاح",
+        "imageModelsAvailable": "{{count}} نموذج صور متاح",
+        "textModelsAvailable": "{{count}} نموذج نص متاح",
+        "apiKeyRequired": "مفتاح API مطلوب",
+        "googleApiKey": "مفتاح Google API",
+        "openrouterApiKey": "مفتاح OpenRouter API",
+        "secureStorage": "تخزين مفاتيح API بشكل آمن",
+        "secureStorageDesc": "يتم تخزين مفاتيح API بشكل آمن في قاعدة البيانات ولا يتم عرضها في الواجهة الأمامية. قم بتكوينها من خلال أسرار Supabase Edge Function لأقصى قدر من الأمان.",
+        "autoGenerate": "إنشاء الأوصاف تلقائياً",
+        "autoGenerateDesc": "إنشاء الأوصاف تلقائياً عند إضافة المنتجات",
+        "googleAI": "Google AI",
+        "googleAIDesc": "Gemini و Imagen",
+        "googleAITextDesc": "نماذج Gemini",
+        "openRouter": "OpenRouter",
+        "openRouterImageDesc": "DALL-E, Flux, SD",
+        "openRouterTextDesc": "+300 نموذج",
+        "refresh": "تحديث"
+      },
+      "paymentMethods": {
+        "title": "طرق الدفع",
+        "knet": "كي-نت",
+        "cod": "الدفع عند الاستلام",
+        "wamad": "تحويل وماد",
+        "enabled": "مفعل",
+        "disabled": "معطل"
+      }
+    },
+    "projects": {
+      "title": "المشاريع",
+      "description": "إدارة مشاريع المعرض",
+      "add": "إضافة مشروع",
+      "edit": "تعديل المشروع",
+      "search": "البحث في المشاريع...",
+      "noProjects": "لم يتم العثور على مشاريع",
+      "generateWithAI": "إنشاء بالذكاء الاصطناعي",
+      "aiTopic": "موضوع المشروع",
+      "generate": "إنشاء",
+      "content": "المحتوى",
+      "details": "التفاصيل",
+      "image": "الصورة",
+      "titleEn": "العنوان (إنجليزي)",
+      "titleAr": "العنوان (عربي)",
+      "slug": "الرابط",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "descriptionAr": "الوصف (عربي)",
+      "location": "الموقع",
+      "clientName": "اسم العميل",
+      "completionDate": "تاريخ الإنجاز",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "featured": "مميز",
+      "featuredBadge": "مميز",
+      "status": "الحالة",
+      "titleColumn": "العنوان",
+      "currentImage": "الصورة الحالية",
+      "uploadImage": "رفع صورة",
+      "generateImage": "إنشاء صورة بالذكاء الاصطناعي",
+      "generating": "جاري الإنشاء..."
+    },
+    "testimonials": {
+      "title": "آراء العملاء",
+      "description": "إدارة شهادات العملاء",
+      "add": "إضافة شهادة",
+      "edit": "تعديل الشهادة",
+      "search": "البحث في الشهادات...",
+      "noTestimonials": "لم يتم العثور على شهادات",
+      "generateWithAI": "إنشاء بالذكاء الاصطناعي",
+      "aiTopic": "نوع العميل / السيناريو",
+      "generate": "إنشاء",
+      "author": "المؤلف",
+      "content": "المحتوى",
+      "settings": "الإعدادات",
+      "authorImage": "صورة المؤلف",
+      "authorNameEn": "اسم المؤلف (إنجليزي)",
+      "authorNameAr": "اسم المؤلف (عربي)",
+      "authorTitleEn": "المسمى الوظيفي (إنجليزي)",
+      "authorTitleAr": "المسمى الوظيفي (عربي)",
+      "contentEn": "الشهادة (إنجليزي)",
+      "contentAr": "الشهادة (عربي)",
+      "rating": "التقييم",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "activeDesc": "عرض هذه الشهادة على الموقع",
+      "featured": "مميز",
+      "featuredBadge": "مميز",
+      "featuredDesc": "عرض في الصفحة الرئيسية",
+      "status": "الحالة"
+    },
+    "searchPlaceholder": "البحث في المنتجات والطلبات والمستخدمين...",
+    "language": "اللغة"
+  }
+}
