@@ -10,6 +10,26 @@ interface Brand {
   logo_url: string | null;
 }
 
+const BrandItem = ({ brand }: { brand: Brand }) => {
+  const [error, setError] = useState(false);
+  return (
+    <div className="flex-shrink-0 w-40 h-20 bg-card rounded-lg border border-border flex items-center justify-center px-6 hover:border-primary hover:shadow-lg transition-all duration-300">
+      {brand.logo_url && !error ? (
+        <img
+          src={normalizeStorageUrl(brand.logo_url)}
+          alt={brand.name}
+          onError={() => setError(true)}
+          className="max-w-full max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+        />
+      ) : (
+        <span className="font-semibold text-muted-foreground text-center">
+          {brand.name}
+        </span>
+      )}
+    </div>
+  );
+};
+
 const BrandsShowcase = () => {
   const { t } = useTranslation();
   const [brands, setBrands] = useState<Brand[]>([]);
@@ -64,22 +84,7 @@ const BrandsShowcase = () => {
           className="py-4"
         >
           {displayBrands.map((brand) => (
-            <div
-              key={brand.id}
-              className="flex-shrink-0 w-40 h-20 bg-card rounded-lg border border-border flex items-center justify-center px-6 hover:border-primary hover:shadow-lg transition-all duration-300"
-            >
-              {brand.logo_url ? (
-                <img
-                  src={normalizeStorageUrl(brand.logo_url)}
-                  alt={brand.name}
-                  className="max-w-full max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              ) : (
-                <span className="font-semibold text-muted-foreground text-center">
-                  {brand.name}
-                </span>
-              )}
-            </div>
+            <BrandItem key={brand.id} brand={brand} />
           ))}
         </InfiniteSlider>
 
