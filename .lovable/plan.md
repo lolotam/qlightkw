@@ -1,59 +1,79 @@
 
+# Fix Broken Images: MinIO Server Unreachable
 
-# Fix All Missing Images Across the Website
+## Problem Diagnosis
 
-## Problem Summary
+The browser console reveals the root cause: **ALL MinIO URLs are failing with `ERR_TUNNEL_CONNECTION_FAILED`**. The MinIO server at `minio.walidmohamed.com` is completely unreachable from the browser.
 
-The database stores image URLs pointing to MinIO (`minio.walidmohamed.com/qlifgtkw/...`). The `normalizeStorageUrl()` function converts these to Supabase Storage URLs. However, the files in Supabase Storage are **corrupted HTML pages** (Cloudflare challenge pages copied during migration), not actual images.
+Current state:
+- **Database URLs**: All point to MinIO (`minio.walidmohamed.com/qlifgtkw/...`)
+- **MinIO server**: Unreachable (`ERR_TUNNEL_CONNECTION_FAILED` for every request)
+- **Supabase Storage**: Contains copies, but 54 out of 61 files are corrupted HTML (from a failed migration). Only 7 are real images.
 
-Evidence from database:
-- Products: 19 out of 20 files are `text/html` (~128KB)
-- Brands: 5 out of 7 are `text/html`
-- Categories: 7 out of 9 are `text/html`
-- Only files uploaded directly (Lenovo brand/category) are real images
+Valid images in Supabase Storage:
+- `brands/1769987379992-ceazl.png` (Lenovo logo) -- this is why Lenovo works
+- `categories/1769987377383-tvnf2.png` (Lenovo category)
+- `products/1769987375336-ml7o9h.png` (1 product image)
 
-## Solution: Use MinIO URLs Directly
+Everything else in Supabase is a corrupted 128KB HTML file.
 
-Since the MinIO server at `minio.walidmohamed.com` is working (hero videos already load from it), the fastest fix is to **stop converting MinIO URLs to broken Supabase copies**.
+## Solution (Two Parts)
 
-### Step 1 - Update `normalizeStorageUrl` in `src/lib/storage.ts`
+### Part 1 -- Re-enable MinIO-to-Supabase URL conversion
 
-Change the function so MinIO URLs pass through unchanged. MinIO is serving files correctly via the Nginx reverse proxy.
+Since MinIO is unreachable, we must convert MinIO URLs back to Supabase Storage URLs. This will at least make the 3 valid images display (Lenovo brand/category and 1 product). The corrupted files will still show as broken, but this is the necessary foundation.
 
-```text
-Before: MinIO URL -> converted to Supabase Storage URL (broken HTML files)
-After:  MinIO URL -> used as-is (working images from MinIO)
-```
+**File: `src/lib/storage.ts`**
+- Restore the MinIO-to-Supabase conversion logic in `normalizeStorageUrl`
+- Map MinIO paths like `categories/xxx.jpg` to `product-images/categories/xxx.jpg` in Supabase
 
-The function will only convert URLs if the files are confirmed to exist in Supabase with correct mimetypes (Supabase URLs pass through unchanged as before).
+### Part 2 -- Add image error fallback in components
 
-### Step 2 - Fix Build Error in `generate-ai-content`
+Since most Supabase copies are corrupted HTML, add `onError` handlers to `<img>` tags in the affected components so broken images show a graceful fallback (icon/placeholder) instead of a broken link icon.
 
-The import `https://esm.sh/@supabase/supabase-js@2.95.1` is failing with a 500 error from esm.sh. Change to the unversioned `@2` import that the file already uses (this is a transient CDN issue - no code change needed if the file already has `@2`).
+**Files to update:**
+- `src/components/storefront/ProductCard.tsx` -- Add `onError` handler to product images that hides the broken image and shows the lightbulb emoji fallback
+- `src/components/storefront/FeaturedCategories.tsx` -- Add `onError` handler on category images to fall back to the icon-based display
+- `src/components/storefront/BrandsShowcase.tsx` -- Add `onError` handler on brand logos to fall back to the text name display
 
-### Step 3 - Verify Image Display Across All Pages
+## What This Achieves
 
-Confirm images render on:
-- Homepage: Featured categories, product cards, brand logos
-- Shop page: Product grid images
-- Product detail page: Image gallery
+| Section | Before | After |
+|---------|--------|-------|
+| Categories | All broken (MinIO unreachable) | Lenovo shows image; others show icon + name fallback |
+| Products | All broken | 1 product shows image; others show lightbulb fallback |
+| Brands | All broken except Lenovo | Lenovo shows logo; others show brand name text |
+| Hero | Broken (MinIO unreachable) | Still broken -- hero videos also come from MinIO |
+
+## Permanent Fix Required (User Action)
+
+The images will remain partially broken until the actual image files are available. Two options:
+
+1. **Fix the MinIO server**: Make `minio.walidmohamed.com` accessible again, then revert `normalizeStorageUrl` to pass through MinIO URLs
+2. **Re-run Storage Migration**: Fix the Cloudflare/WAF on `s3.walidmohamed.com` so the migration tool copies real image bytes (not HTML error pages) into Supabase Storage. After a successful migration, all images will load from Supabase.
 
 ## Technical Details
 
-### File Changes
+### `src/lib/storage.ts` changes
 
-**`src/lib/storage.ts`** - Remove the MinIO-to-Supabase conversion logic. Return MinIO URLs as-is since the MinIO server is accessible and serving correct files.
+Restore the conversion logic:
 
-### What This Fixes
+```text
+MinIO URL: https://minio.walidmohamed.com/qlifgtkw/categories/xxx.jpg
+            |
+            v  (extract path after bucket prefix)
+Path: categories/xxx.jpg
+            |
+            v  (map folder "categories" -> bucket "product-images")
+Supabase URL: https://yubebbfsmlopmnluajgf.supabase.co/storage/v1/object/public/product-images/categories/xxx.jpg
+```
 
-| Section | Current State | After Fix |
-|---------|--------------|-----------|
-| Categories | Broken (loading HTML from Supabase) | Working (loading from MinIO) |
-| Products | Broken (loading HTML from Supabase) | Working (loading from MinIO) |
-| Brands | Broken (loading HTML from Supabase) | Working (loading from MinIO) |
-| Hero slides | Already working (using MinIO directly) | No change |
+### Image fallback pattern
 
-### Future Consideration
+Each component gets an `onError` handler on its `<img>` tag:
 
-Once the Cloudflare/WAF issue on `s3.walidmohamed.com` is resolved, you can re-run the Storage Migration tool to properly copy real image data into Supabase Storage. At that point, the normalization can be re-enabled to serve everything from Supabase.
+```text
+<img onError={(e) => { hide image, show fallback UI }} />
+```
 
+This ensures the user sees a clean placeholder instead of a broken image icon, while the valid Supabase copies (Lenovo, etc.) display correctly.
