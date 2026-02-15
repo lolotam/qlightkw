@@ -25,6 +25,41 @@ const categoryIcons: Record<string, React.ReactNode> = {
   commercial: <Building2 className="h-8 w-8" />,
 };
 
+const CategoryWithImage = ({ category, language }: { category: Category; language: string }) => {
+  const [error, setError] = useState(false);
+  if (error) {
+    return (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+          <div className="bg-primary/10 rounded-full p-4 mb-3">
+            {categoryIcons[category.slug] || <Lightbulb className="h-8 w-8" />}
+          </div>
+          <h3 className="font-semibold text-lg">
+            {language === 'ar' ? category.name_ar : category.name_en}
+          </h3>
+        </div>
+      </>
+    );
+  }
+  return (
+    <>
+      <img
+        src={normalizeStorageUrl(category.image_url)}
+        alt={language === 'ar' ? category.name_ar : category.name_en}
+        onError={() => setError(true)}
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+        <h3 className="font-semibold text-lg text-foreground drop-shadow-md">
+          {language === 'ar' ? category.name_ar : category.name_en}
+        </h3>
+      </div>
+    </>
+  );
+};
+
 const FeaturedCategories = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
@@ -98,21 +133,7 @@ const FeaturedCategories = () => {
                 >
                   {/* Background Image or Gradient */}
                   {category.image_url ? (
-                    <>
-                      <img
-                        src={normalizeStorageUrl(category.image_url)}
-                        alt={language === 'ar' ? category.name_ar : category.name_en}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
-                      />
-                      {/* Subtle overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                      {/* Category name at bottom */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                        <h3 className="font-semibold text-lg text-foreground drop-shadow-md">
-                          {language === 'ar' ? category.name_ar : category.name_en}
-                        </h3>
-                      </div>
-                    </>
+                    <CategoryWithImage category={category} language={language} />
                   ) : (
                     <>
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300" />

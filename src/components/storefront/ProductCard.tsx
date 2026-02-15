@@ -34,6 +34,8 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(({ product, ind
   const { addItem } = useCart();
   const [isHovered, setIsHovered] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const [secondaryImgError, setSecondaryImgError] = useState(false);
 
   const name = language === 'ar' ? product.name_ar : product.name_en;
   const price = product.sale_price || product.base_price;
@@ -88,12 +90,13 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(({ product, ind
           <Link to={`/product/${product.slug}`} className="block">
             <div className="relative aspect-[3/4] overflow-hidden">
               {/* Primary Image */}
-              {primaryImageUrl ? (
+              {primaryImageUrl && !imgError ? (
                 <img
                   src={primaryImageUrl}
                   alt={name}
+                  onError={() => setImgError(true)}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                    isHovered && hasSecondaryImage ? 'opacity-0' : 'opacity-100'
+                    isHovered && hasSecondaryImage && !secondaryImgError ? 'opacity-0' : 'opacity-100'
                   }`}
                 />
               ) : (
@@ -103,10 +106,11 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(({ product, ind
               )}
               
               {/* Secondary Image (only if different from primary) */}
-              {hasSecondaryImage && secondaryImageUrl && (
+              {hasSecondaryImage && secondaryImageUrl && !secondaryImgError && (
                 <img
                   src={secondaryImageUrl}
                   alt={`${name} - alternate`}
+                  onError={() => setSecondaryImgError(true)}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                     isHovered ? 'opacity-100' : 'opacity-0'
                   }`}

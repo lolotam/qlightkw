@@ -42,11 +42,18 @@ export function normalizeStorageUrl(url: string | null | undefined): string {
     return url;
   }
   
-  // MinIO URLs pass through unchanged - MinIO server is accessible and serving correct files.
-  // Supabase Storage copies are corrupted (HTML error pages from failed migration).
-  // Once migration is fixed, this can be re-enabled.
+  // Convert MinIO URLs to Supabase Storage URLs
+  // MinIO server is unreachable; Supabase has copies (some corrupted, but it's the best option)
+  for (const pattern of MINIO_PATTERNS) {
+    if (pattern.test(url)) {
+      const path = url.replace(pattern, '');
+      const folder = path.split('/')[0];
+      const bucket = FOLDER_TO_BUCKET[folder] || 'product-images';
+      return `${SUPABASE_STORAGE_URL}/${bucket}/${path}`;
+    }
+  }
   
-  // Return URL as-is (MinIO, external, placeholder, etc.)
+  // Return URL as-is (external, placeholder, etc.)
   return url;
 }
 
