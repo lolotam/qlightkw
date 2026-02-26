@@ -6,7 +6,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Skeleton } from '@/components/ui/skeleton';
 import { motion } from 'framer-motion';
 import { Lightbulb, Lamp, Sun, Building2 } from 'lucide-react';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl } from '@/lib/image-resolver';
 
 interface Category {
   id: string;
@@ -45,7 +45,7 @@ const CategoryWithImage = ({ category, language }: { category: Category; languag
   return (
     <>
       <img
-        src={normalizeStorageUrl(category.image_url)}
+        src={resolveImageUrl(category.image_url, 'category', category.slug)}
         alt={language === 'ar' ? category.name_ar : category.name_en}
         onError={() => setError(true)}
         className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-500"

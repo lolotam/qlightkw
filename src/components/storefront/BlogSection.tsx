@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/integrations/supabase/client';
 import { Calendar, ArrowRight, BookOpen, Lightbulb, Home, Sparkles } from 'lucide-react';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl } from '@/lib/image-resolver';
 
 interface BlogPost {
   id: string;
@@ -139,17 +139,11 @@ const BlogSection = () => {
                 <Card className="h-full overflow-hidden group hover:shadow-lg transition-all duration-300">
                   {/* Image */}
                   <div className="aspect-video bg-muted relative overflow-hidden">
-                    {post.featured_image_url ? (
-                      <img
-                        src={normalizeStorageUrl(post.featured_image_url)}
-                        alt={isRTL ? post.title_ar || post.title_en : post.title_en}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
-                        <CategoryIcon className="h-16 w-16 text-primary/30" />
-                      </div>
-                    )}
+                    <img
+                      src={resolveImageUrl(post.featured_image_url, 'blog', post.slug)}
+                      alt={isRTL ? post.title_ar || post.title_en : post.title_en}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                     <Badge className="absolute top-3 start-3 gap-1">
                       <CategoryIcon className="h-3 w-3" />
                       {getCategoryLabel(post.category)}

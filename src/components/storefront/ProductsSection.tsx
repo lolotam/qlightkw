@@ -7,7 +7,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ProductCard from './ProductCard';
 import { ArrowRight } from 'lucide-react';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl, resolveSecondaryImageUrl } from '@/lib/image-resolver';
 
 interface Product {
   id: string;
@@ -67,8 +67,8 @@ const ProductsSection = () => {
           
           return {
             ...product,
-            image_url: normalizeStorageUrl(primaryImage?.url),
-            secondary_image_url: normalizeStorageUrl(secondaryImage?.url)
+            image_url: resolveImageUrl(primaryImage?.url, 'product', product.slug),
+            secondary_image_url: resolveSecondaryImageUrl(secondaryImage?.url, product.slug)
           };
         });
         

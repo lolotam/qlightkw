@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl } from '@/lib/image-resolver';
 
 interface HeroSlide {
   id: string;
@@ -187,7 +187,7 @@ const HeroSection = () => {
 
           // Determine which media to use based on device and normalize URLs
           const rawMediaUrl = isMobile && slide.media_url_mobile ? slide.media_url_mobile : slide.media_url;
-          const mediaUrl = normalizeStorageUrl(rawMediaUrl);
+          const mediaUrl = resolveImageUrl(rawMediaUrl, 'hero', slide.id);
           const mediaType = isMobile && slide.media_url_mobile ? (slide.media_type_mobile || 'image') : slide.media_type;
 
           return (

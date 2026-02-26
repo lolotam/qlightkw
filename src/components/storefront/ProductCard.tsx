@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Heart, ShoppingCart, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl, resolveSecondaryImageUrl } from '@/lib/image-resolver';
 
 interface Product {
   id: string;
@@ -47,9 +47,9 @@ const ProductCard = forwardRef<HTMLDivElement, ProductCardProps>(({ product, ind
   // Check if there's a different secondary image
   const hasSecondaryImage = product.secondary_image_url && product.secondary_image_url !== product.image_url;
   
-  // Normalize URLs for MinIO compatibility
-  const primaryImageUrl = normalizeStorageUrl(product.image_url);
-  const secondaryImageUrl = normalizeStorageUrl(product.secondary_image_url);
+  // Resolve URLs - falls back to local images if broken
+  const primaryImageUrl = resolveImageUrl(product.image_url, 'product', product.slug);
+  const secondaryImageUrl = resolveSecondaryImageUrl(product.secondary_image_url, product.slug);
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();

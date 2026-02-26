@@ -6,7 +6,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl } from '@/lib/image-resolver';
 
 interface Project {
   id: string;
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       // Combine projects with their images
       const projectsWithImages = projectsData.map(project => ({
         ...project,
-        image_url: normalizeStorageUrl(imagesData?.find(img => img.project_id === project.id)?.url),
+        image_url: resolveImageUrl(imagesData?.find(img => img.project_id === project.id)?.url, 'project', project.slug),
       }));
 
       setProjects(projectsWithImages);
