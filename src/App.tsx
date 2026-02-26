@@ -30,6 +30,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Returns from "./pages/Returns";
+import Shipping from "./pages/Shipping";
 import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
@@ -103,6 +104,7 @@ const AnimatedRoutes = () => {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/returns" element={<Returns />} />
+          <Route path="/shipping" element={<Shipping />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
