@@ -28,7 +28,7 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import { SlidersHorizontal, Grid3X3, List, Search, X } from 'lucide-react';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl, resolveSecondaryImageUrl } from '@/lib/image-resolver';
 
 interface Product {
   id: string;
@@ -193,10 +193,10 @@ const Shop = () => {
             const primaryImage = productImages.find(img => img.is_primary) || productImages[0];
             const secondaryImage = productImages.find(img => !img.is_primary && img.url !== primaryImage?.url) || productImages[1];
             
-            return {
-              ...product,
-              image_url: normalizeStorageUrl(primaryImage?.url),
-              secondary_image_url: normalizeStorageUrl(secondaryImage?.url)
+              return {
+                ...product,
+                image_url: resolveImageUrl(primaryImage?.url, 'product', product.slug),
+                secondary_image_url: resolveSecondaryImageUrl(secondaryImage?.url, product.slug)
             };
           });
 
