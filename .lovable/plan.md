@@ -1,79 +1,152 @@
 
-# Fix Broken Images: MinIO Server Unreachable
 
-## Problem Diagnosis
+# Update README.md with Full Project Documentation
 
-The browser console reveals the root cause: **ALL MinIO URLs are failing with `ERR_TUNNEL_CONNECTION_FAILED`**. The MinIO server at `minio.walidmohamed.com` is completely unreachable from the browser.
+## Overview
 
-Current state:
-- **Database URLs**: All point to MinIO (`minio.walidmohamed.com/qlifgtkw/...`)
-- **MinIO server**: Unreachable (`ERR_TUNNEL_CONNECTION_FAILED` for every request)
-- **Supabase Storage**: Contains copies, but 54 out of 61 files are corrupted HTML (from a failed migration). Only 7 are real images.
+Replace the current generic README with a comprehensive document covering the full project architecture, directory structure, tech stack, database schema, edge functions, deployment, and all features.
 
-Valid images in Supabase Storage:
-- `brands/1769987379992-ceazl.png` (Lenovo logo) -- this is why Lenovo works
-- `categories/1769987377383-tvnf2.png` (Lenovo category)
-- `products/1769987375336-ml7o9h.png` (1 product image)
+## Content to Include
 
-Everything else in Supabase is a corrupted 128KB HTML file.
+### 1. Project Title and Description
+- **QLight Kuwait** -- a full-stack e-commerce platform for a lighting products store serving the Kuwait market
+- Bilingual (English/Arabic) with RTL support
+- Features a customer-facing storefront and a full admin dashboard
 
-## Solution (Two Parts)
+### 2. Live URLs
+- Published: `https://qlightkw.lovable.app`
 
-### Part 1 -- Re-enable MinIO-to-Supabase URL conversion
+### 3. Tech Stack Section
+- **Frontend**: React 18, TypeScript, Vite 5, Tailwind CSS 3
+- **UI Components**: shadcn/ui (Radix UI primitives), Lucide icons, Framer Motion animations
+- **State Management**: TanStack React Query, React Context (Theme, Language, Auth, Cart)
+- **Rich Text Editor**: TipTap
+- **Forms**: React Hook Form + Zod validation
+- **Routing**: React Router DOM v6 with animated page transitions
+- **Internationalization**: i18next (English + Arabic)
+- **Charts**: Recharts
+- **Carousel**: Embla Carousel
+- **Drag & Drop**: dnd-kit
+- **Backend**: Supabase (PostgreSQL database, Auth, Storage, Edge Functions)
+- **Deployment**: Docker + Nginx, Lovable Cloud
 
-Since MinIO is unreachable, we must convert MinIO URLs back to Supabase Storage URLs. This will at least make the 3 valid images display (Lenovo brand/category and 1 product). The corrupted files will still show as broken, but this is the necessary foundation.
+### 4. Directory Structure
+A clear tree diagram of the `src/` folder:
 
-**File: `src/lib/storage.ts`**
-- Restore the MinIO-to-Supabase conversion logic in `normalizeStorageUrl`
-- Map MinIO paths like `categories/xxx.jpg` to `product-images/categories/xxx.jpg` in Supabase
-
-### Part 2 -- Add image error fallback in components
-
-Since most Supabase copies are corrupted HTML, add `onError` handlers to `<img>` tags in the affected components so broken images show a graceful fallback (icon/placeholder) instead of a broken link icon.
-
-**Files to update:**
-- `src/components/storefront/ProductCard.tsx` -- Add `onError` handler to product images that hides the broken image and shows the lightbulb emoji fallback
-- `src/components/storefront/FeaturedCategories.tsx` -- Add `onError` handler on category images to fall back to the icon-based display
-- `src/components/storefront/BrandsShowcase.tsx` -- Add `onError` handler on brand logos to fall back to the text name display
-
-## What This Achieves
-
-| Section | Before | After |
-|---------|--------|-------|
-| Categories | All broken (MinIO unreachable) | Lenovo shows image; others show icon + name fallback |
-| Products | All broken | 1 product shows image; others show lightbulb fallback |
-| Brands | All broken except Lenovo | Lenovo shows logo; others show brand name text |
-| Hero | Broken (MinIO unreachable) | Still broken -- hero videos also come from MinIO |
-
-## Permanent Fix Required (User Action)
-
-The images will remain partially broken until the actual image files are available. Two options:
-
-1. **Fix the MinIO server**: Make `minio.walidmohamed.com` accessible again, then revert `normalizeStorageUrl` to pass through MinIO URLs
-2. **Re-run Storage Migration**: Fix the Cloudflare/WAF on `s3.walidmohamed.com` so the migration tool copies real image bytes (not HTML error pages) into Supabase Storage. After a successful migration, all images will load from Supabase.
-
-## Technical Details
-
-### `src/lib/storage.ts` changes
-
-Restore the conversion logic:
-
-```text
-MinIO URL: https://minio.walidmohamed.com/qlifgtkw/categories/xxx.jpg
-            |
-            v  (extract path after bucket prefix)
-Path: categories/xxx.jpg
-            |
-            v  (map folder "categories" -> bucket "product-images")
-Supabase URL: https://yubebbfsmlopmnluajgf.supabase.co/storage/v1/object/public/product-images/categories/xxx.jpg
+```
+src/
+  assets/           -- Static images (blog, projects)
+  components/
+    admin/          -- Admin dashboard components (10 files)
+    storefront/     -- Customer-facing components (15 files)
+    ui/             -- shadcn/ui primitives (~50 files)
+  constants/        -- Admin constants
+  contexts/         -- ThemeContext, LanguageContext
+  hooks/            -- useAuth, useCart, useCoupon, useVisitorTracking, etc.
+  i18n/             -- i18next config + en.json, ar.json locale files
+  integrations/     -- Supabase client and generated types
+  layouts/          -- AccountLayout, AdminLayout, StorefrontLayout
+  lib/              -- Utilities (utils.ts, storage.ts, logger.ts)
+  pages/
+    account/        -- Customer account pages (5 files)
+    admin/          -- Admin pages (30 files)
+    (root)          -- Public pages (20 files)
+supabase/
+  functions/        -- 8 Edge Functions
+  migrations/       -- Database migrations
+public/
+  images/           -- Product, category, brand images
 ```
 
-### Image fallback pattern
+### 5. Database Tables (25 tables)
+List all tables derived from the Supabase types file:
+- `products`, `product_images`, `product_variations`, `product_tags`
+- `categories`, `brands`, `tags`
+- `orders`, `order_items`, `order_status_history`
+- `carts`, `cart_items`
+- `profiles`, `user_roles`, `wishlist_items`
+- `blog_posts`, `newsletter_subscribers`
+- `hero_slides`, `promo_banners`, `testimonials`
+- `projects`, `project_images`
+- `coupons`, `coupon_usages`
+- `faqs`, `site_settings`, `site_visits`, `system_logs`
+- `observability_metrics`, `observability_alert_configs`, `observability_alert_history`, `observability_health_snapshots`
+- `admin_inbox_messages`, `feature_toggles`
 
-Each component gets an `onError` handler on its `<img>` tag:
+### 6. Supabase Edge Functions (8 functions)
+- `ai-assistant` -- AI chat assistant for customers
+- `generate-ai-content` -- AI product description generation
+- `generate-blog-content` -- AI blog post generation
+- `publish-scheduled-posts` -- Cron-triggered scheduled blog publishing
+- `send-admin-email` -- Transactional emails to admin
+- `send-auth-email` -- Authentication-related emails
+- `send-order-email` -- Order confirmation/status emails
+- `minio-storage` -- Storage migration proxy (MinIO to Supabase)
 
-```text
-<img onError={(e) => { hide image, show fallback UI }} />
-```
+### 7. Storefront Features
+- Animated splash screen and page transitions
+- Hero carousel with dynamic slides from database
+- Shop by category grid
+- Product catalog with filtering/sorting
+- Product detail with image gallery and variations
+- Shopping cart with coupon support
+- Checkout flow
+- Wishlist
+- Customer account (orders, addresses, settings)
+- Blog with detail pages
+- Projects/portfolio showcase
+- Brand showcase
+- Testimonials section
+- Newsletter subscription
+- AI-powered chat assistant
+- Contact page with messages
+- Static pages (About, FAQ, Privacy, Terms, Returns)
 
-This ensures the user sees a clean placeholder instead of a broken image icon, while the valid Supabase copies (Lenovo, etc.) display correctly.
+### 8. Admin Dashboard Features
+- Analytics dashboard with charts
+- Visitor tracking
+- Product CRUD with image gallery, variations, and SEO
+- Category, brand, and tag management
+- Order management with status workflow
+- Coupon/discount management
+- User management with role-based access
+- Blog post editor with drafts and scheduling
+- Hero banner/slide management
+- Promo banner management
+- Project/portfolio management
+- Testimonial management
+- Newsletter subscriber management
+- Email inbox (send/receive)
+- System logs and observability
+- Image gallery, validator, and cacher tools
+- Storage migration tool
+- Theme builder
+- Inventory alerts
+- API documentation page
+- Site settings
+
+### 9. Authentication and Authorization
+- Supabase Auth with email/password
+- Role-based access: `admin` and `customer` roles via `user_roles` table
+- Protected admin routes
+
+### 10. Internationalization
+- English and Arabic with full RTL support
+- Language context provider with direction switching
+
+### 11. Running Locally
+- Prerequisites, clone, install, dev server commands
+- Environment variables needed (Supabase URL, Anon Key)
+
+### 12. Docker Deployment
+- Production: `docker compose up` (serves on port 3000 via Nginx)
+- Development: `docker compose --profile dev up dev` (port 8080 with hot reload)
+
+### 13. Storage Architecture
+- Supabase Storage buckets: `hero-section`, `product-images`, `project-images`, `blog-images`
+- URL normalization utility in `src/lib/storage.ts`
+
+## File Changed
+
+**`README.md`** -- Complete rewrite with all sections above.
+
