@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
-import { normalizeStorageUrl } from '@/lib/storage';
+import { resolveImageUrl } from '@/lib/image-resolver';
 
 interface Brand {
   id: string;
@@ -16,7 +16,7 @@ const BrandItem = ({ brand }: { brand: Brand }) => {
     <div className="flex-shrink-0 w-40 h-20 bg-card rounded-lg border border-border flex items-center justify-center px-6 hover:border-primary hover:shadow-lg transition-all duration-300">
       {brand.logo_url && !error ? (
         <img
-          src={normalizeStorageUrl(brand.logo_url)}
+          src={resolveImageUrl(brand.logo_url, 'brand', brand.name.toLowerCase().replace(/\s+/g, '-'))}
           alt={brand.name}
           onError={() => setError(true)}
           className="max-w-full max-h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
