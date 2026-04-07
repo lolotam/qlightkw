@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Table,
   TableBody,
@@ -74,6 +75,8 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [bulkDeleteDialogOpen, setBulkDeleteDialogOpen] = useState(false);
 
   // Fetch products with images
   const { data: products, isLoading } = useQuery({
@@ -159,6 +162,33 @@ export default function ProductsPage() {
     },
   });
 
+  // Bulk delete mutation
+  const bulkDeleteMutation = useMutation({
+    mutationFn: async (ids: string[]) => {
+      const { error } = await supabase
+        .from('products')
+        .delete()
+        .in('id', ids);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['admin-products'] });
+      toast({
+        title: t('admin.productsDeleted', 'Products deleted'),
+        description: t('admin.productsDeletedDesc', `${selectedIds.size} products have been deleted successfully.`),
+      });
+      setBulkDeleteDialogOpen(false);
+      setSelectedIds(new Set());
+    },
+    onError: (error) => {
+      toast({
+        variant: 'destructive',
+        title: t('admin.error', 'Error'),
+        description: error.message,
+      });
+    },
+  });
+
   // Toggle product status
   const toggleStatusMutation = useMutation({
     mutationFn: async ({ id, is_active }: { id: string; is_active: boolean }) => {
@@ -227,6 +257,27 @@ export default function ProductsPage() {
     setDeleteDialogOpen(true);
   };
 
+  // Selection helpers
+  const toggleSelectAll = () => {
+    if (!products) return;
+    if (selectedIds.size === products.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(products.map(p => p.id)));
+    }
+  };
+
+  const toggleSelectOne = (id: string) => {
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const allSelected = products && products.length > 0 && selectedIds.size === products.length;
+
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Page header */}
@@ -272,6 +323,30 @@ export default function ProductsPage() {
         </CardContent>
       </Card>
 
+      {/* Bulk action bar */}
+      {selectedIds.size > 0 && (
+        <div className="flex items-center gap-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+          <span className="text-sm font-medium">
+            {selectedIds.size} {t('admin.selected', 'selected')}
+          </span>
+          <Button
+            variant="destructive"
+            size="sm"
+            onClick={() => setBulkDeleteDialogOpen(true)}
+          >
+            <Trash2 className="h-4 w-4 mr-2" />
+            {t('admin.deleteSelected', 'Delete Selected')}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setSelectedIds(new Set())}
+          >
+            {t('admin.clearSelection', 'Clear')}
+          </Button>
+        </div>
+      )}
+
       {/* Products table */}
       <Card>
         <CardHeader>
@@ -311,6 +386,13 @@ export default function ProductsPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
+                    <TableHead className="w-[40px]">
+                      <Checkbox
+                        checked={allSelected}
+                        onCheckedChange={toggleSelectAll}
+                        aria-label="Select all"
+                      />
+                    </TableHead>
                     <TableHead className="w-[50px]">#</TableHead>
                     <TableHead>{t('admin.product', 'Product')}</TableHead>
                     <TableHead>{t('admin.sku', 'SKU')}</TableHead>
@@ -323,7 +405,14 @@ export default function ProductsPage() {
                 </TableHeader>
                 <TableBody>
                   {products?.map((product, index) => (
-                    <TableRow key={product.id}>
+                    <TableRow key={product.id} data-state={selectedIds.has(product.id) ? 'selected' : undefined}>
+                      <TableCell>
+                        <Checkbox
+                          checked={selectedIds.has(product.id)}
+                          onCheckedChange={() => toggleSelectOne(product.id)}
+                          aria-label={`Select ${product.name_en}`}
+                        />
+                      </TableCell>
                       <TableCell className="font-medium text-muted-foreground">{index + 1}</TableCell>
                       <TableCell>
                         <div className="flex items-center gap-3">
@@ -415,7 +504,6 @@ export default function ProductsPage() {
                             >
                               <Trash2 className={`h-4 w-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
                               {t('admin.delete', 'Delete')}
-                              {t('admin.delete', 'Delete')}
                             </DropdownMenuItem>
                           </DropdownMenuContent>
                         </DropdownMenu>
@@ -453,6 +541,33 @@ export default function ProductsPage() {
                 <Trash2 className="h-4 w-4 mr-2" />
               )}
               {t('admin.delete', 'Delete')}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Bulk delete confirmation dialog */}
+      <AlertDialog open={bulkDeleteDialogOpen} onOpenChange={setBulkDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t('admin.deleteProducts', 'Delete Products')}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t('admin.bulkDeleteDesc', `Are you sure you want to delete ${selectedIds.size} products? This action cannot be undone.`)}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>{t('admin.cancel', 'Cancel')}</AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              onClick={() => bulkDeleteMutation.mutate([...selectedIds])}
+              disabled={bulkDeleteMutation.isPending}
+            >
+              {bulkDeleteMutation.isPending ? (
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
+              ) : (
+                <Trash2 className="h-4 w-4 mr-2" />
+              )}
+              {t('admin.deleteSelected', 'Delete Selected')} ({selectedIds.size})
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
