@@ -23,3 +23,6 @@ verify_jwt = false
 
 [functions.minio-storage]
 verify_jwt = false
+
+[functions.product-assets]
+verify_jwt = false
